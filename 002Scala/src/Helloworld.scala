@@ -1,3 +1,5 @@
+import java.util.Date
+
 /*
 idea创建Scala入门HelloWorld            https://blog.csdn.net/javaee_gao/article/details/82535171
 * */
@@ -6,6 +8,16 @@ idea创建Scala入门HelloWorld            https://blog.csdn.net/javaee_gao/arti
 object HelloWorld {
   def main(args: Array[String]): Unit = {
     println("hello world")
+    dun06("Hello")
+    fun07(new Date(),"info","ok")
+  }
+
+  def dun06(a: String): Unit = {
+    println(a)
+  }
+
+  def fun07(date:Date,tp:String,msg:String):Unit={
+    println(s"$date\t$tp\t$msg")
   }
 }
 

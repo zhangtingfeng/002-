@@ -1,5 +1,8 @@
 import java.util.Date
 
+import scala.collection.mutable
+import scala.collection.mutable.ListBuffer
+
 /*
 idea创建Scala入门HelloWorld            https://blog.csdn.net/javaee_gao/article/details/82535171
 * */
@@ -7,7 +10,34 @@ idea创建Scala入门HelloWorld            https://blog.csdn.net/javaee_gao/arti
 
 object HelloWorld {
   def main(args: Array[String]): Unit = {
+    val arr01=Array(1,"2","ytret",4)
+    arr01(1)=99
+    //arr01.("dddd")
+    println(arr01(1))
+    arr01.foreach(println)
+
+    val list01=List(11,22,33,44)
+    list01.foreach(println)
+
+    println("--------list02-----------")
+    var list02=new ListBuffer[Int]()
+    list02.+=(334)
+    list02.foreach(println)
+
+    println("--------set-----------")
+    val set01:Set[Int]=Set(5643,8,9,9,5434,36553,45644,5)
+    set01.foreach(println)
     println("hello world")
+
+    println("--------scala.collection.mutable.Set-----------")
+    import scala.collection.mutable.Set
+    val set02:mutable.Set[Int]=Set(11,11)
+    set02.add(888)
+    set02.add(11)
+    set02.foreach(println)
+
+
+    println("--------end-----------")
     dun06("Hello")
     fun07(new Date(),"info","ok")
   }

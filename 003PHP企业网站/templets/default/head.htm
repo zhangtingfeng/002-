@@ -1,0 +1,42 @@
+<header class="site-header">
+  <div id="main-header" class="main-header header-sticky">
+    <div class="inner-header container clearfix">
+      <div class="logo"><a href="/"><img src="/skin/images/logo.png" alt="{dede:global.cfg_webname/}"/></a></div>
+      <div class="header-right-toggle pull-right hidden-md hidden-lg"> <a href="javascript:void(0)" class="side-menu-button"><i class="fa fa-bars"></i></a> </div>
+      <nav class="main-navigation text-left hidden-xs hidden-sm" id="navigation">
+        <ul>
+          {dede:channelartlist typeid='40,16,1,5,28,21,17,35' currentstyle='active'}
+          <li class="Lev1 {dede:field.currentstyle/}"> <a href="{dede:field name='typeurl'/}" class="menu1 has-submenu">{dede:field name='typename'/} 
+            {dede:field name=typeid runphp="yes"}
+            global $dsql;
+            $sql = "SELECT id From `dede_arctype` WHERE reid='@me' And ishidden<>1 order by sortrank asc limit 0, 100 ";
+            $row = $dsql->GetOne($sql);      
+            @me=is_array($row)?'<i class="fa fa-angle-down"></i>':'';
+            {/dede:field}</a>
+            <ul {dede:field name=typeid runphp="yes"}
+global $dsql;
+$sql = "SELECT id From `#@__arctype` WHERE reid='@me' And ishidden<>1 order by sortrank asc limit 0, 100 ";
+$row = $dsql->
+              GetOne($sql);
+              @me=is_array($row)?'class="sub-menu dr-menu2"':'style="display:none"';
+              {/dede:field}> 
+              
+              {dede:channel type='son' noself='yes'}
+              <li class="Lev2"> <a href="[field:typeurl/]" class="menu21">[field:typename/]</a> </li>
+              {/dede:channel}
+            </ul>
+          </li>
+          {/dede:channelartlist}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<div id="search">
+  <button type="button" class="close">×</button>
+  <form  class="t-search-form" name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+    <input type="hidden" name="kwtype" value="0" />
+    <input type="search" value="" name="q" class="search-input" placeholder="输入关键字" />
+    <button type="submit" class="btn btn-primary"><span>搜索</span></button>
+  </form>
+</div>

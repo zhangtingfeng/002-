@@ -1,0 +1,17 @@
+<aside class="sidebar col-md-3 inner-right">
+  <section class="widget page-left">
+      <h3 class="title">{dede:field name='typeid' function="GetTopTypename(@me)"/}</h3>
+      <div class="sub-nav">
+              <ul class="nav-list">
+                  {dede:channel row="10" type="son" col="1" currentstyle="
+                  <li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>" }
+                  <li><a href='[field:typeurl/]' [field:rel/]><span>[field:typename/]</span></a></li>
+                  {/dede:channel}
+              </ul>
+      </div>
+      {dede:include filename="online_apply.htm"/}
+      <div class="qrcode">
+          <img src="/skin/images/wxcode.png" width="190px" height="190px"/>
+      </div>
+  </section>
+</aside>

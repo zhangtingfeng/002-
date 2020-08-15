@@ -1,0 +1,63 @@
+<div class="online-apply">
+  <h4 class="online-apply-title">
+      在线报名
+  </h4>
+  <form role="form" class="online-apply-form" >
+    <div class="form-group">
+      <label for="name">姓名<span class="required">*</span></label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="请输入您的姓名">
+    </div>
+    <div class="form-group">
+      <label for="name">电话<span class="required">*</span></label>
+      <input type="text" class="form-control" id="tel" name="tel" placeholder="请输入您的电话">
+    </div>
+    <div class="form-group">
+      <label for="name">咨询课程<span class="required">*</span></label>
+      <select id="course" name="course" class="form-control">
+          <option value="">请选择咨询课程</option>
+          <option value="产业互联网创新领袖计划">产业互联网创新领袖计划</option>
+          <option value="标杆企业游学参访">标杆企业游学参访</option>
+          <option value="企业内训">企业内训</option> 
+          <option value="公开课">公开课</option>
+          <option value="其他游学参访">其他游学参访</option>
+      </select>
+    </div>
+    <div style="text-align: center;">
+      <input type="button" id="btn_submit" class="btn btn-info" style="width: 100%;" value="免费获取资料"/>
+    </div>
+    <script type="text/javascript">
+      $(function(){
+        $("#btn_submit").click(function(){
+          var postData={"action":"post","diyid":"1","name":$("#name").val(),"do":"2","tel":$("#tel").val(),"course":$("#course").val(),"dede_fields":"name,text;tel,text;course,select","dede_fieldshash":"db20ffa86e7cad611b0928003d6b7b89"};
+              if($.trim(postData.name)=="")
+              {
+                alert("姓名不能为空");
+                 return; 
+              }
+              if($.trim(postData.tel)=="")
+              {
+                alert("手机号码不能为空");
+                 return; 
+              }
+              if($.trim(postData.tel)=="course")
+              {
+                alert("请选择咨询课程");
+                 return; 
+              }
+              $.ajax({
+                url:"/plus/diy.php",
+                method:"post",
+                data:postData,
+                dataType:"text",
+                success:function(d){
+                    if(d.indexOf("发布成功")>0)
+                    {
+                       alert("已提交成功，稍后会有相关人员与您取得联系");
+                    }
+                }
+              });
+        });
+      });
+    </script>
+  </form>
+</div>

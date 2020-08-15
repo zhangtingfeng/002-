@@ -1,0 +1,17 @@
+﻿<aside class="sidebar col-md-3 inner-right">
+  <section class="widget page-left">
+      <h3 class="title">平台资源</h3>
+      <div class="sub-nav">
+              <ul class="nav-list">
+                {dede:channelartlist type="top" row='10' typeid='21'}
+                    <li><a href='{dede:field.typeurl/}'><span>{dede:field.typename/}</span></a></li>       
+                {/dede:channelartlist}
+                 
+              </ul>
+      </div>
+      {dede:include filename="online_apply.htm"/}
+      <div class="qrcode">
+          <img src="/skin/images/wxcode.png" width="190px" height="190px"/>
+      </div>
+  </section>
+</aside>

@@ -1,0 +1,1 @@
+<li><a href="[field:arcurl/]"><img alt="[field:title/]" title="[field:title/]" src="[field:litpic function=str_replace(" -lp","","@me");/]"> </a> </li>

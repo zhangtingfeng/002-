@@ -1,0 +1,12 @@
+61.158.146.185||/plus/view.php?aid=106||SELECT typeimg FROM dede_arctype where id='74' OR id =(SELECT reid FROM dede_arctype where id='74') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=106||SELECT typeimg FROM dede_arctype where id='74' OR id =(SELECT reid FROM dede_arctype where id='74') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=107||SELECT typeimg FROM dede_arctype where id='74' OR id =(SELECT reid FROM dede_arctype where id='74') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=109||SELECT typeimg FROM dede_arctype where id='74' OR id =(SELECT reid FROM dede_arctype where id='74') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=107||SELECT typeimg FROM dede_arctype where id='74' OR id =(SELECT reid FROM dede_arctype where id='74') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=108||SELECT typeimg FROM dede_arctype where id='74' OR id =(SELECT reid FROM dede_arctype where id='74') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=106||SELECT typeimg FROM dede_arctype where id='74' OR id =(SELECT reid FROM dede_arctype where id='74') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=106||SELECT typeimg FROM dede_arctype where id='74' OR id =(SELECT reid FROM dede_arctype where id='74') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=104||SELECT typeimg FROM dede_arctype where id='73' OR id =(SELECT reid FROM dede_arctype where id='73') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=104||SELECT typeimg FROM dede_arctype where id='73' OR id =(SELECT reid FROM dede_arctype where id='73') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=108||SELECT typeimg FROM dede_arctype where id='74' OR id =(SELECT reid FROM dede_arctype where id='74') LIMIT 1||sub select detect
+61.158.146.185||/plus/view.php?aid=105||SELECT typeimg FROM dede_arctype where id='73' OR id =(SELECT reid FROM dede_arctype where id='73') LIMIT 1||sub select detect

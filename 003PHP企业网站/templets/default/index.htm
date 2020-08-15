@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit" />
+<meta name="robots" content="index, follow" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="author" content="order by 010xr.com" />
+<link rel="stylesheet" href="/skin/css/bootstrap.css"/>
+<link rel="stylesheet" href="/skin/css/animate.css"/>
+<link rel="stylesheet" href="/skin/css/jquery-ui.css"/>
+<link rel="stylesheet" href="/skin/css/simple-line-icons.css"/>
+<link rel="stylesheet" href="/skin/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="/skin/css/icon-font.css"/>
+<link rel="stylesheet" href="/skin/css/educa.css"/>
+<link rel="stylesheet" href="/skin/css/settings.css"/>
+<link rel="stylesheet" href="/skin/css/tk.css"/>
+<style type="text/css">
+/*index-case*/
+#index-case .course-item .down-content .text-button {
+  margin-left: 20px;
+  padding-bottom: 20px;
+}
+#index-case .owl-pagination {
+  margin-bottom: 20px;
+  opacity: 1;
+  display: inline-block;
+}
+#index-case .owl-pagination .owl-page span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 0px 5px;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  background-color: #f5a425;
+}
+</style>
+<script type="text/javascript" src="/skin/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/skin/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.flexslider-min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i))) {
+  	    $("#index-widget img").css({"width":"100%","height":"auto"});
+    }
+    else
+    {
+       $("#index-widget img").css({"width":"100%"});
+    }
+  });
+  
+</script>
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+<!--[if lt IE 9]>
+<script src="/skin/js/html5.js"></script>
+<script src="/skin/js/respond.min.js"></script>
+<style>
+	article,aside,dialog,footer,header,section,nav,figure,menu{display:block;padding:0;margin:0;}
+</style>
+<link rel="stylesheet" href="/skin/css/ie.css" type="text/css" media="screen"/>
+<![endif]-->
+
+<!--[if lte IE 9]>
+<script src="/skin/js/jquery.placeholder.js"></script>
+<script>
+jQuery(document).ready(function($){
+	$('input, textarea').placeholder();
+});
+</script>
+<script type="text/javascript" src="/skin/js/pie.js"></script>
+<script type="text/javascript">
+
+jQuery(document).ready(function($){
+	$('.indexci img').each(function() {
+		PIE.attach(this);  
+	});  
+});
+</script>
+<![endif]-->
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="/skin/js/selectivizr.js"></script>
+  <script type="text/javascript" src="/skin/js/excanvas.compiled.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--[if lt IE 8]>
+	<div class="lt-ie8-bg">
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser.</p>
+		<p>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<p class="browsehappy">对不起，您正在使用的是 <strong>过时</strong> 的浏览器.</p>
+		<p>请升级您的浏览器（IE8+，或者是火狐、谷歌、Opera、Safari等现代浏览器），以改进您的用户体验！</p>
+	</div>
+	<style>
+	.lt-ie8-bg{z-index:11111;position:absolute;top:0;left:0;right:0;bottom:0;background-color:#333;color:#999;padding:100px 20px;text-align:center;font-size:26px}
+	.lt-ie8-bg a{color:#f5f5f5;border-bottom:2px solid #fff}
+	.lt-ie8-bg a:hover{text-decoration:none}
+	#sidebar-menu-container{display:none;}
+	</style>
+<![endif]-->
+<div class="sidebar-menu-container" id="sidebar-menu-container">
+<div class="sidebar-menu-push">
+<div class="sidebar-menu-overlay"></div>
+<div class="sidebar-menu-inner">
+{dede:include filename="head.htm"/}
+<div class="slider-2" id="index-slider">
+  <!--轮播大图-开始-->
+<div class="i_banner">
+  <div class="flexslider">
+    <ul class="slides">
+      {dede:arclist row="5" typeid="20"  titlelen='200' orderby='pubdate' orderway="desc"}
+          <li><a href="[field:arcurl/]"><img alt="[field:title/]" title="[field:title/]" src="[field:litpic function=str_replace(" -lp","","@me");/]"> </a> </li> 
+      {/dede:arclist} 
+    </ul> 
+  </div> 
+</div>
+</div>
+<section class="section-pad" id="index-widget">
+  <div class="welcome-intro-2">
+      <div class="container">
+          {dede:channelartlist typeid='28,28'}
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="section-heading text-center">
+                      <h1><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></h1>
+                      <p>{dede:field name='description'/}</p>
+                  </div>
+              </div>
+          </div>
+          <div class="row" style="text-align: center;">
+              {dede:field name='content'/}
+          </div>
+          {/dede:channelartlist}
+      </div>
+  </div>
+</section>
+<section class="section-pad popular-courses" id="index-portfolio">
+  <div class="container">
+    <div class="section-heading text-center">
+      <h1><a href="{dede:field name='typeurl'/}">精品课程</a></h1>
+      <p>{dede:field name='description'/}</p>
+    </div>
+    <div class="row">
+      <div id="owl-courses-second"> {dede:arclist typeid="99" row='12'  titlelen='50' orderby='pubdate'}
+        <div class="item course-item"> <a href="[field:arcurl/]"><img src="[field:picname/]" alt="[field:title/]"/></a>
+          <div class="down-content">
+            <h4 class="iport-title"><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></h4>
+            <p class="desc"><a href="[field:arcurl/]">[field:description function="cn_substr(@me,200)"/]...</a></p>
+            <div class="text-button"> <a href="[field:arcurl/]">查看更多<i class="fa fa-arrow-right"></i></a> </div>
+          </div>
+        </div>
+        {/dede:arclist} </div>
+    </div>
+  </div>
+</section>
+{dede:channelartlist typeid='65,65'}
+<section class="section-pad read-books books-read" id="index-case">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading text-center">
+          <h1><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></h1>
+          <p>{dede:field name='description'/}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="owl-courses-case">
+      {dede:arclist row='4' titlelen='50' orderby='pubdate'}
+      <div class="case-item" >
+        <div class="books-item">
+          <p class="thumb-link"><a href="[field:arcurl/]"><img alt="[field:title/]" src="[field:picname/]"/></a></p>
+          <h4><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></h4>
+        </div>
+      </div>
+      {/dede:arclist} 
+    </div> 
+    </div>
+  </div>
+</section>
+{/dede:channelartlist}    
+      
+<section class="section-pad university-news" id="index-platform">
+  <div class="container">
+    <div class="row">
+      <div class="section-heading text-center">
+        <h1><a href="javascript:;">平台资源</a></h1>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-md-13 col-sm-4 col-xs-4 inews-item">
+          <h3>专家资源</h3>
+          <ul class="platform-items">
+            {dede:arclist typeid="45" row='3' flag='c' titlelen='50' orderby='pubdate'}
+              <li>
+                <a href="[field:arcurl/]" target="_blank">
+                  <img src="[field:picname/]" />
+                  <div class="platform-items-desc">
+                      <p class="desc-title">[field:title/]</p>
+                      <p class="desc-content">[field:description function='cn_substr(Html2text(@me),70)'/]...</p>
+                </div>
+                </a>
+              </li>
+            {/dede:arclist}
+            <li class="li-more"><p class="more"><a href="/experts/team/" target="_blank">更多></a></p></li>
+          </ul>
+      </div>
+      <div class="col-md-13 col-sm-4 col-xs-4 inews-item">
+         <h3>校友企业资源</h3>
+         <ul class="platform-items">
+          {dede:arclist typeid="67" row='3' flag='c' titlelen='50' orderby='pubdate'}
+              <li>
+                <a href="[field:arcurl/]" target="_blank">
+                  <img src="[field:picname/]" />
+                  <div class="platform-items-desc">
+                      <p class="desc-title">[field:title/]</p>
+                      <p class="desc-content">[field:description function='cn_substr(Html2text(@me),70)'/]...</p>
+                </div>
+                </a>
+              </li>
+            {/dede:arclist}
+            <li class="li-more"><p class="more"><a href="/resources/alumnus/" target="_blank">更多></a></p></li>
+        </ul>
+      </div>
+      <div class="col-md-13 col-sm-4 col-xs-4 inews-item">
+         <h3>生态资源</h3>
+         <ul class="platform-items">
+          {dede:arclist typeid="70" row='3' flag='c' titlelen='50' orderby='pubdate'}
+              <li>
+                <a href="[field:arcurl/]" target="_blank">
+                  <img src="[field:picname/]" />
+                  <div class="platform-items-desc">
+                      <p class="desc-title">[field:title/]</p>
+                      <p class="desc-content">[field:description function='cn_substr(Html2text(@me),70)'/]...</p>
+                </div>
+                </a>
+              </li>
+            {/dede:arclist}
+            <li class="li-more"><p class="more"><a href="/resources/ecology/" target="_blank">更多></a></p></li>
+        </ul>
+      </div>
+      
+  </div>
+  </div>
+</section>
+<section class="section-pad read-books books-read" id="index-news">
+  <div class="container">
+    <div class="row">
+      <div class="section-heading text-center">
+        <h1><a href="javascript:;">专家·新闻·活动</a></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-heading text-center">
+          <p>{dede:field name='description'/}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col-md-13 col-sm-4 col-xs-4 options-item">
+        <h3><a href="/news/viewpoint/" target="_blank">专家观点</a></h3>
+        <ul class="platform-items">
+          {dede:arclist typeid="72" row='3' flag='c' titlelen='50' orderby='pubdate'}
+            <li>
+              <a href="[field:arcurl/]" target="_blank">
+                <img src="[field:picname/]" />
+                <div class="platform-items-desc">
+                    <p class="desc-title">[field:title/]</p>
+                    <p class="desc-content">[field:description/]</p>
+                    <p class="desc-date">[field:pubdate function='strftime("%Y-%m-%d",@me)'/]</p>
+              </div>
+              </a>
+            </li>
+          {/dede:arclist}
+          <li class="li-more"><p class="more"><a href="/news/viewpoint/" target="_blank">更多></a></p></li>
+        </ul>
+    </div>
+    <div class="col-md-13 col-sm-4 col-xs-4 options-item">
+       <h3><a href="/news/trends/" target="_blank">新闻动态</a></h3>
+       <ul class="platform-items">
+        {dede:arclist typeid="73" row='3' flag='c' titlelen='50' orderby='pubdate'}
+            <li>
+              <a href="[field:arcurl/]" target="_blank">
+                <img src="[field:picname/]" />
+                <div class="platform-items-desc">
+                    <p class="desc-title">[field:title/]</p>
+                    <p class="desc-content">[field:description/]</p>
+                    <p class="desc-date">[field:pubdate function='strftime("%Y-%m-%d",@me)'/]</p>
+              </div>
+              </a>
+            </li>
+          {/dede:arclist}
+          <li class="li-more"><p class="more"><a href="/news/trends/" target="_blank">更多></a></p></li>
+      </ul>
+    </div>
+    <div class="col-md-13 col-sm-4 col-xs-4 options-item">
+       <h3><a href="/news/activities/" target="_blank">活动预告</a></h3>
+       <ul class="platform-items">
+        {dede:arclist channelid='1' typeid="74" addfields='activitytime' row='4' flag='c' titlelen='50' orderby='activitytime'}
+            <li>
+              <a href="[field:arcurl/]" target="_blank">
+                <div class="area-activity-date">
+                    <div class="area-activity-date-m" >
+                      [field:activitytime function='strftime("%m",@me)'/]月
+                    </div>
+                    <div class="area-activity-date-d">
+                      [field:activitytime function='strftime("%d",@me)'/]
+                    </div>
+                </div>
+                <div class="area-activity-content">
+                    <p class="desc-title">[field:title/]</p>
+                    <p class="desc-content">[field:description/]</p>
+                    <p class="desc-date">[field:activitytime function='strftime("%Y",@me)'/]年</p>
+                </div>
+              </a>
+            </li>
+          {/dede:arclist}
+          <li class="li-more"><p class="more"><a href="/news/activities/" target="_blank">更多></a></p></li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</section>
+{dede:include filename="footer.htm"/}
+</body>
+</html>

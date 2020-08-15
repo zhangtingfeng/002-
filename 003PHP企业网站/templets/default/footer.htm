@@ -1,0 +1,142 @@
+<div class="page-sidebar">
+  <dl class="dl-sidebar">
+      <dd class="">
+          <a href="javascript:;" target="_blank">
+              <i class="icon-tel"></i>
+          </a>
+          <div class="layer-tel">{dede:global.cfg_tel/}</div>
+      </dd>
+      <dd>
+        <a href="http://p.qiao.baidu.com/cps/chat?siteId=15134618&userId=530645&siteToken=e5eddeedc575c3d7784260379e738ee4">
+            <i class="icon-online"></i>
+        </a>
+     </dd>
+      <dd class="">
+          <a href="javascript:;">
+              <i class="icon-wx"></i>
+          </a>
+          <div class="layer-wechat">
+              <img id="wechatImg" src="/skin/images/wxcode.png" alt="">
+              <p>扫一扫联系我</p>
+          </div>
+      </dd>
+     
+      <dd>
+          <a href="javascript:;" id="toTop">
+              <i class="icon-returntop"></i>
+              <em>回到顶部</em>
+          </a>
+      </dd>
+  </dl>
+</div>
+<footer class="footer" id="footer-sec">
+  <div class="container">
+    <div class="row">
+      {dede:channelartlist typeid='75' type="son"}
+      <div class="col-sm-2 hidden-sm hidden-xs foot-nav" style="width: 17%;">
+        <div class="footer-widget">
+          <div class="featured-links">
+            <h2>{dede:field name='typename'/} </h2>
+            <div class="line-dec"></div>
+            <ul>
+              {dede:channel type='son' noself='yes'}
+              <li><a href="[field:typeurl/]" target="_blank"><i class="fa fa-caret-right"></i>  [field:typename/]</a></li>
+              {/dede:channel}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/dede:channelartlist}
+      <div class="col-md-4 col-sm-12 foot-about">
+        <div class="footer-widget">
+          <div class="educa-info">
+            <div class="fabout">
+              <div class="fabout-wx">
+                  <img src="/uploads/allimg/200521/1_2319359392.png"/>
+                  <p>产业互联网联盟</p>
+              </div>
+              <div class="fabout-wx">
+                <img src="/uploads/allimg/200521/1_2319351221.png"/>
+                <p>课程助手微信</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-sm-12 cr-left" style="width:100%;text-align:center;">
+          <div class="copyright-text">
+            <p> {dede:global.cfg_powerby/} {dede:global.cfg_beian/} </p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-4 hidden-sm hidden-xs cr-right" style="z-index:100;display:none;">
+          <div class="menu">
+            <ul>
+              <li><a href="http://www.jincheng360.cn/" target="_blank">技术支持：瑾橙科技</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</div>
+<nav class="sidebar-menu slide-from-left">
+  <div class="nano">
+    <div class="content">
+      <nav class="responsive-menu">
+        <ul>
+          {dede:channelartlist typeid='40,16,1,5,28,21,17,35'}
+          <li {dede:field name=typeid runphp="yes"}
+            global $dsql;
+            $sql = "SELECT id From `dede_arctype` WHERE reid='@me' And ishidden<>1 order by sortrank asc limit 0, 100";
+            $row = $dsql->GetOne($sql);      
+            @me=is_array($row)?'class="Lev1 menu-item-has-children"':'';
+            {/dede:field} href="{dede:field name='typeurl'/}" class="Lev1"> <a href="{dede:field name='typeurl'/}" class="menu1">{dede:field name='typename'/} 
+            {dede:field name=typeid runphp="yes"}
+            global $dsql;
+            $sql = "SELECT id From `dede_arctype` WHERE reid='@me' And ishidden<>1 order by sortrank asc limit 0, 100 ";
+            $row = $dsql->GetOne($sql);      
+            @me=is_array($row)?'<i class="fa fa-caret-down"></i>':'';
+            {/dede:field} </a>
+            <ul class="sub-menu dr-menu2">
+              {dede:channel type='son' noself='yes'}
+                <li class="Lev2"> <a href="[field:typeurl/]" class="menu2">[field:typename /]</a> </li>
+              {/dede:channel}
+            </ul>
+          </li>
+          {/dede:channelartlist}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</nav>
+</div>
+<script type="text/javascript" src="/skin/js/jquery.themepunch.tools.min.js"></script> 
+<script type="text/javascript" src="/skin/js/jquery.themepunch.revolution.min.js"></script> 
+<script type="text/javascript" src="/skin/js/plugins.js"></script> 
+<script type="text/javascript" src="/skin/js/custom.js"></script>
+<script type="text/javascript">
+$(function(){
+   $("#navigation > ul > li:nth-child(7) > ul > li:nth-child(5)").remove();
+var owl = $("#owl-courses-case");
+
+	  owl.owlCarousel({
+  		
+  		pagination : true,
+		paginationNumbers: false,
+  		autoPlay: false, //5000,Set AutoPlay to 3 seconds
+	    items : 4, //10 items above 1000px browser width
+	    itemsDesktop : [1280,4], //5 items between 1000px and 901px
+	    itemsDesktopSmall : [1024,3], // betweem 900px and 601px
+	    itemsTablet: [960,3], //2 items between 600 and 0
+		itemsTabletSmall : [768,2],
+	    itemsMobile : [480,1] // itemsMobile disabled - inherit from itemsTablet option
+	});
+});
+</script>
